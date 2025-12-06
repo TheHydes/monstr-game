@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .nav-btn {
+    @apply px-3 py-1.5 text-sm flex items-center gap-2 transition-colors hover:bg-slate-800;
+    position: relative;
+
+    &:not(.is-active) {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+
+        background: linear-gradient(to right, #004f3b, #a4f4cf);
+
+        transform: scaleX(0);
+        transition: transform 0.4s ease-out;
+      }
+
+      &::before {
+        top: 0;
+        transform-origin: left;
+      }
+
+      &::after {
+        bottom: 0;
+        transform-origin: right;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        transform: scaleX(1);
+      } 
+    }
+  }
+
+  .btn-sm {
+    @apply px-2 py-1 text-xs;
+  }
+
+  .btn-md {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-4 py-2 text-base;
+  }
+
+  .btn-primary {
+    @apply bg-emerald-900 text-white! p-2.5 rounded shadow-md shadow-emerald-900/50
+           hover:bg-emerald-200 hover:text-black! hover:shadow-emerald-200/50;
+    &:hover {animation: pulseGlow 2.5s ease-in-out infinite;}
+  }
+
+  .btn-secondary {
+    @apply bg-emerald-200 text-black! p-2.5 rounded-md shadow-md shadow-emerald-200/50
+           hover:bg-emerald-900 hover:text-white! hover:shadow-emerald-900/50;
+    &:hover {animation: pulseGlow 2.5s ease-in-out infinite;}
+  }
+
+  .btn-blue {
+    @apply hover:bg-light-blue rounded-2xl hover:text-black! font-bold! bg-blue text-white! shadow-md hover:shadow-light-blue/50 shadow-blue/50;
+  }
+
+  .btn-blue-reverse {
+    @apply bg-light-blue rounded-2xl text-black! font-bold! hover:bg-blue hover:text-white! shadow-md shadow-light-blue/50 hover:shadow-blue/50;
+  }
+
+  .btn-add {
+    @apply hover:bg-right rounded;
+
+    background-image: linear-gradient(to right, #8A1F0A 0%, #724D09  60%, #8A1F0A  100%);
+    box-shadow: 0 0 10px #ffa909;
+    transition: 0.5s;
+    background-size: 200% auto;      
+  }
+
+  .btn-remove {
+    @apply hover:bg-right rounded;
+
+    background-image: linear-gradient(to right, #b62204 0%, #630202  60%, #8A1F0A  100%);
+    box-shadow: 0 0 10px #4b1601;
+    transition: 0.5s;
+    background-size: 200% auto;      
+  }
+
+  .btn-quest {
+    @apply hover:bg-right rounded;
+
+    background-image: linear-gradient(to right, #4b6cb7 0%, #182848  60%, #4b6cb7  100%);
+    transition: 0.5s;
+    background-size: 200% auto;           
+  }
+
+  .btn-claim {
+    @apply hover:bg-right rounded;
+
+    background-image: linear-gradient(to right, #157c58 0%, #16af4e  55%, #1D976C  100%);
+    box-shadow: 0 0 10px 2px #089b20;
+    transition: 0.5s;
+    background-size: 200% auto;       
+  }
+
+  .btn-potion {
+    @apply hover:bg-emerald-200/20 active:bg-emerald-500 active:scale-105 rounded-2xl;
+  }
+
+  .btn-plus-minus {
+    @apply hover:bg-slate-600/90 rounded-2xl active:bg-slate-500 transition-colors;
+  }
+
+  .wh-11-12 {
+    @apply w-11 h-12;
+  }
+
+  .wh-12 {
+    @apply w-12 h-12;
+  }
+
+  .box-black {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .bg-soft-black {
+    background: var(--color-soft-black);
+  }
+  
+  .bg-light-black {
+    background: var(--color-softer-black);
+  }
+
+  .bg-dark-blue {
+    background: var(--color-dark-blue);
+  }
+
+  .bg-blue {
+    background: var(--color-blue);
+  }
+
+  .bg-light-blue {
+    background: var(--color-light-blue);
+  }
+
+  .monster-or-attack-sizing {
+    @apply min-w-40 min-h-40 w-[25vw] h-[25vh] max-w-64 max-h-64;
+  }
+
+  textarea {
+    @apply text-white bg-slate-800/80 [&::-webkit-scrollbar]:w-0 focus:outline-none focus:ring-2 focus:ring-emerald-400;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-lg font-semibold;
+  }
+
+  h3 {
+    @apply font-semibold;
+  }
+}
+
+@theme {
+  --breakpoint-xxl: 1920px;
+  --color-soft-black: #10171b;
+  --color-softer-black: #13222b;
+  --color-dark-blue: #0a3653;
+  --color-blue: #2A6C98;
+  --color-light-blue: #afdaf7;
+
+  @keyframes pulse-scale {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      background-size: 100% 100%;
+      box-shadow: 0 0 10px 2px #089b20;
+    }
+    50% {
+      background-size: 130% 130%;
+      box-shadow: 0 0 18px 4px #16af4e;
+    }
+    100% {
+      background-size: 100% 100%;
+      box-shadow: 0 0 10px 2px #089b20;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-pulse-scale:hover {
+    animation: pulse-scale 0.6s ease-in-out infinite;
+  }
+
+  .animate-slow-pulse-scale {
+    animation: pulse-scale 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-scale-on-click {
+    animation: pulse-scale 0.6s ease-in-out;
+  }
+}

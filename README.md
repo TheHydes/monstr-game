@@ -113,6 +113,7 @@ npm run dev
 
 ### If you want to check out the project locally, you will need to update a few parts of the weather.js store, you can copy-paste the following: to override it:
 
+```
 import { defineStore } from 'pinia'
 
 import bgHeavyRain from '@/assets/Images/Backgrounds/EnemyHeavyRainBG.png'
@@ -250,6 +251,7 @@ export const useWeatherStore = defineStore('weather', {
     },
   },
 })
+```
 
 ### You will also need a .env.local file that contains the following:
 

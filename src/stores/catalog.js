@@ -10,10 +10,10 @@ import imgPoisonDagger from '@/assets/Images/Shop/WeaponShop/PoisonDagger.png'
 import imgIceAxe       from '@/assets/Images/Shop/WeaponShop/IceAxe.png'
 import imgFlamingSword from '@/assets/Images/Shop/WeaponShop/FlamingSword.png'
 
-import imgArmorBasic   from '@/assets/Images/Shop/ArmorShop/BasicArmor.png'
-import imgArmorColored from '@/assets/Images/Shop/ArmorShop/ColoredArmor.png'
-import imgArmorEpicB   from '@/assets/Images/Shop/ArmorShop/EpicBlueArmor.png'
-import imgArmorEpicR   from '@/assets/Images/Shop/ArmorShop/EpicRedArmor.png'
+import imgArmorBasic   from '@/assets/Images/Shop/Armorshop/BasicArmor.png'
+import imgArmorColored from '@/assets/Images/Shop/Armorshop/ColoredArmor.png'
+import imgArmorEpicB   from '@/assets/Images/Shop/Armorshop/EpicBlueArmor.png'
+import imgArmorEpicR   from '@/assets/Images/Shop/Armorshop/EpicRedArmor.png'
 
 export const useCatalogStore = defineStore('catalog', {
   state: () => ({

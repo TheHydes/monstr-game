@@ -36,7 +36,7 @@ import { usePlayerStore } from '@/stores/player'
 import ShopGrid from '@/components/shop/ShopGrid.vue'
 import ShopSummary from '@/components/shop/ShopSummary.vue'
 import ParallaxImage from '@/components/common/ParallaxImage.vue'
-import armorShopBg from '@/assets/Images/Shop/ArmorShop/ArmorShop.png'
+import armorShopBg from '@/assets/Images/Shop/ArmorShop/Armorshop.png'
 
 const cat = useCatalogStore()
 const player = usePlayerStore()

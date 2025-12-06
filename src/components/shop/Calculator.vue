@@ -9,6 +9,7 @@
     <div class="relative w-full flex flex-col px-8">
       <div class="flex justify-between items-center h-16 mb-8">
         <button class="btn-remove px-3 py-1 text-xs" @click="onDel">DEL</button>
+        <button class="btn-primary px-3 py-1 text-xs" @click="$emit('close')">CLOSE</button>
         <button class="btn-remove px-3 py-1 text-xs" @click="onClear">CLEAR</button>
       </div>
 
@@ -59,6 +60,8 @@
 <script setup>
 import { ref } from 'vue'
 import calculatorBg from '@/assets/Images/Misc/calculator.jpg'
+
+const emit = defineEmits(['close'])
 
 const expression = ref('')
 const justEvaluated = ref(false)
